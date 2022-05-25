@@ -535,13 +535,13 @@
           <h2>Keynote Speakers</h2>
           <!-- <p>Here are some of our speakers</p> -->
         </div>
-
+        
         <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
           <li class="nav-item">
-            <a class="nav-link active" href="#2021" role="tab" data-toggle="tab">2021</a>
+            <a class="nav-link active" href="#2021" role="tab" data-toggle="tab" onclick="showSpeakers('2021')">2021</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#2023" role="tab" data-toggle="tab">2023</a>
+            <a class="nav-link" href="#2023" role="tab" data-toggle="tab" onclick="showSpeakers('2023')">2023</a>
           </li>
         </ul>
         <div role="tabpanel" class="tab-pane fade show active" id="2021">
@@ -577,19 +577,7 @@
           </div>
 
         </div>
-        </div>
-
-        <div role="tabpanel" class="tab-pane fade" id="2023">
-        hh
-        </div>
-
-
-
-
         <div class="row">
-
-
-
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="100">
               <a href="Maryam%20Shojae.html"><img src="assets/img/speakers/maryam.jpg" alt="Speaker 1"
@@ -615,11 +603,18 @@
               <h3>Modular Sensor Interfacing and Signal Conditioning</h3>
             </a>
             <p style=" text-align: justify;text-justify: inter-word;"> Sensing devices are becoming a part of communication technologies or a part of portable and mobile measurement devices to bring a new age of ubiquitous sensing. Integrable sensor modules demand modular interfacing, analog signal conditioning and integrable solutions compatible with the analog to data and information transformation. The solutions must suppress the noise, have the required sensitivity, and reduce effect of non-idealities. In this talk examples of low-noise, discrete and integrated designs for the interacting and signal conditioning of sensor signals in various forms and from different sensing elements are presented.</p>
-
           </div>
-
-
         </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="2023">
+        TBA
+        </div>
+
+
+
+
+        
       </div>
 
     </section><!-- End Speakers Section -->
@@ -1402,6 +1397,20 @@
     (function ($) {
       $.cookieBubble();
     })(jQuery);
+  </script>
+  <script>
+    function showSpeakers(year){
+      const newSpeakers = document.getElementById(year);
+      const first = document.getElementById('2021');
+      const second = document.getElementById('2023');
+      first.classList.remove('active');
+      first.classList.remove('show');
+      second.classList.remove('active');
+      second.classList.remove('show');
+
+      newSpeakers.classList.add('active');
+      newSpeakers.classList.add('show');
+    }
   </script>
 
 </body>
